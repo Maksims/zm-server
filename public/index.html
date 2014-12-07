@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <title>zombies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <style>
         body {
             margin: 0;
@@ -172,8 +175,8 @@
         zoom: 1
     };
     var mouse = {
-        x: 0,
-        y: 0
+        x: Math.floor(window.clientX / 2) || 0,
+        y: Math.floor(window.clientY / 2) || 0
     };
     var objects = { };
     var renders = {
@@ -376,7 +379,7 @@
     var ctx = canvas.getContext('2d');
 
 
-    var client = new WebSocket('ws://10.100.85.224:8080/');
+    var client = new WebSocket('ws://moka.co:1024/');
     client.onopen = function() {
         console.log('ws: open');
 

@@ -18,4 +18,5 @@ require('./lib/loop');
 process.on('uncaughtException', function(err) {
     console.log(err);
     console.log(err.stack);
+    process.exit(0);
 });
